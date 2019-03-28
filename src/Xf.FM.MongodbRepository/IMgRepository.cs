@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Xf.FM.MongodbRepository
 {
     public interface IMgRepository<TDb> where TDb : BaseDbEntity
     {
+        IMongoQueryable<TDb> Query { get; }
         Task<long> CountDocumentsAsync(Expression<Func<TDb, bool>> expression);
         Task<long> CountDocumentsAsync(FilterDefinition<TDb> filter);
         Task<long> DeleteManyAsync(Expression<Func<TDb, bool>> expression);
