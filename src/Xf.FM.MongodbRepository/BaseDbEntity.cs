@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Xf.FM.MongodbRepository
 {
-    public partial class BaseDbEntity
+    public abstract  class BaseDbEntity
     {
-        [BsonId(IdGenerator = typeof(string))]
+        [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]

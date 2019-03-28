@@ -9,6 +9,7 @@ namespace Xf.FM.MongodbRepository
 {
     public interface IMgRepository<TDb> where TDb : BaseDbEntity
     {
+        IMongoCollection<TDb> Col { get; }
         IMongoQueryable<TDb> Query { get; }
         Task<long> CountDocumentsAsync(Expression<Func<TDb, bool>> expression);
         Task<long> CountDocumentsAsync(FilterDefinition<TDb> filter);

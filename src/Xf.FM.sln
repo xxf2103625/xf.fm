@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM", "Xf.FM\Xf.FM.csproj", "{3B6F6065-37DD-42FF-B344-968CF5EA10E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM", "Xf.FM\Xf.FM.csproj", "{3B6F6065-37DD-42FF-B344-968CF5EA10E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.MongodbRepository", "Xf.FM.MongodbRepository\Xf.FM.MongodbRepository.csproj", "{FD4AC975-CA1D-4952-B96E-35455C22542E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.MongodbRepository", "Xf.FM.MongodbRepository\Xf.FM.MongodbRepository.csproj", "{FD4AC975-CA1D-4952-B96E-35455C22542E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{83C7C6BA-C375-4241-9FA8-2DAE9FE27104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.MongodbRepositoryTest", "test\Xf.FM.MongodbRepositoryTest\Xf.FM.MongodbRepositoryTest.csproj", "{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{FD4AC975-CA1D-4952-B96E-35455C22542E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD4AC975-CA1D-4952-B96E-35455C22542E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD4AC975-CA1D-4952-B96E-35455C22542E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD5149F4-5F39-4111-A456-BDDA972059E0}
