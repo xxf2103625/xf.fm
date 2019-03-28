@@ -87,7 +87,7 @@ namespace Xf.FM.MongodbRepositoryTest
         [TestCleanup]
         public void CleanUp()
         {
-            //mgConfig.Dispose();
+            mgConfig.Dispose();
         }
     }
 }
