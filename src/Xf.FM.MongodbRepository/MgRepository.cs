@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -13,12 +14,14 @@ namespace Xf.FM.MongodbRepository
         protected IMongoClient _client;
         protected IMongoDatabase _db;
         public IMongoCollection<TDb> _col;
+        
         public MgRepository(IMgConfig mgConfig)
         {
             _client = new MongoClient(mgConfig.GetMgConfig());
             _db = _client.GetDatabase(mgConfig.GetDbName());
             _col = _db.GetCollection<TDb>(typeof(TDb).Name);
         }
+        public IMongoQueryable<TDb> Query => _col.AsQueryable();
         public TDb FindById(string id)
         {
             return _col.FindSync(Builders<TDb>.Filter.Eq(m => m.Id, id)).First();
@@ -36,7 +39,7 @@ namespace Xf.FM.MongodbRepository
         }
         public async Task<IEnumerable<TDb>> FindAsync(FilterDefinition<TDb> filter, FindOptions<TDb> findOptions = null)
         {
-            IAsyncCursor<TDb> asyncCursor = await _col.FindAsync(filter,findOptions);
+            IAsyncCursor<TDb> asyncCursor = await _col.FindAsync(filter, findOptions);
             return asyncCursor.ToEnumerable();
         }
 
