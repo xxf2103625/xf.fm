@@ -5,7 +5,7 @@ using Xf.FM.MongodbRepository;
 
 namespace Xf.FM.MongodbRepositoryTest.TestDbEntity
 {
-    public class TestEntity:BaseDbEntity
+    public class TestEntity:BaseMgDbEntity
     {
         public TestEntity()
         {

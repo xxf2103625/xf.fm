@@ -10,23 +10,34 @@ using Xf.FM.MongodbRepositoryTest.TestDbEntity;
 
 namespace Xf.FM.MongodbRepositoryTest
 {
+    /// <summary>
+    /// mongodb的client由sdk自己维护线程安全，且没有dispose的必要？
+    /// </summary>
     [TestClass]
     public class AddTest
     {
-
-        protected IMgRepository<TestEntity> repository;
-        IMgConfig mgConfig;
-        [TestInitialize]
-        public void Init()
+        public AddTest()
         {
-            mgConfig = new MgConfig("mongodb://192.168.0.198:27017", "Test1");
-            repository = new MgRepository<TestEntity>(mgConfig);
+           
         }
+        protected IMgRepository<TestEntity> repository {
+            get
+            {
+                return  new MgRepository<TestEntity>(mgConfig);
+            }
+        }
+        protected IMgConfig mgConfig;// = new MgConfig("mongodb://192.168.0.198:27017", "Test1");
+        //[TestInitialize]
+        //public void Init()
+        //{
+
+        //}
         [TestMethod]
         public void TestInsertOne()
         {
-            //后台进程 client链接可能无法回收
-            Parallel.For(1, 10000, index =>
+            mgConfig = new MgConfig("mongodb://192.168.0.198:27017", "Test1");
+            //后台进程 client链接可能无法回收 Test进程就已经结束
+            var result= Parallel.For(1, 100, index =>
             {
 
                 repository.InsertOne(new TestEntity()
@@ -37,11 +48,16 @@ namespace Xf.FM.MongodbRepositoryTest
                     Stream = new byte[10]
                 });
             });
-
+            while (!result.IsCompleted)
+            {
+                System.Threading.Thread.Sleep(100);
+            }
+            //mgConfig.Dispose();
         }
         [TestMethod]
         public async Task TestInsertManyAsync()
         {
+            mgConfig = new MgConfig("mongodb://192.168.0.198:27017", "Test1");
             for (int index = 0; index < 1000; index++)
             {
                 var data = new List<TestEntity>();
@@ -51,6 +67,7 @@ namespace Xf.FM.MongodbRepositoryTest
                 }
                 await repository.InsertManyAsync(data);
             }
+            //mgConfig.Dispose();
         }
         public class Person
         {
@@ -64,9 +81,10 @@ namespace Xf.FM.MongodbRepositoryTest
         {
             //var client = new MongoClient("mongodb://192.168.0.198:27017");
             var client = new MongoClient(MongoClientSettings.FromConnectionString("mongodb://192.168.0.198:27017"));
+            Console.WriteLine("Client当前状态"+client.Cluster.Description.ToString());
             var database = client.GetDatabase("foo");
             var collection = database.GetCollection<Person>("person4");
-
+            Console.WriteLine("Client当前状态" + client.Cluster.Description.ToString());
             await collection.InsertOneAsync(new Person()
             {
                 Id = ObjectId.GenerateNewId().ToString(),
@@ -75,19 +93,28 @@ namespace Xf.FM.MongodbRepositoryTest
                 //Order = 1,
                 //Stream = new byte[10]
             });
-
+            Console.WriteLine("Client当前状态" + client.Cluster.Description.ToString());
             var list = await collection.Find(new BsonDocument("Name", "test1"))
                 .ToListAsync();
-
+            Console.WriteLine("Client当前状态" + client.Cluster.Description.ToString());
             foreach (var document in list)
             {
                 //Console.WriteLine(document["Name"]);
             }
+            //client.Cluster.Dispose();
+            Console.WriteLine("Client当前状态" + client.Cluster.Description.ToString());
+          
+
         }
-        [TestCleanup]
-        public void CleanUp()
-        {
-            mgConfig.Dispose();
-        }
+        //[TestCleanup]
+        //public void CleanUp()
+        //{
+        //    mgConfig.Dispose();
+        //}
+
+        //public void Dispose()
+        //{
+        //    mgConfig.Dispose();
+        //}
     }
 }

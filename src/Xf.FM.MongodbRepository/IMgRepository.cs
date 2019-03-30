@@ -7,29 +7,31 @@ using MongoDB.Driver.Linq;
 
 namespace Xf.FM.MongodbRepository
 {
-    public interface IMgRepository<TDb> where TDb : BaseDbEntity
+    public interface IMgRepository<TEntity> where TEntity : BaseMgDbEntity
     {
-        IMongoCollection<TDb> Col { get; }
-        IMongoQueryable<TDb> Query { get; }
-        Task<long> CountDocumentsAsync(Expression<Func<TDb, bool>> expression);
-        Task<long> CountDocumentsAsync(FilterDefinition<TDb> filter);
-        Task<long> DeleteManyAsync(Expression<Func<TDb, bool>> expression);
-        Task<long> DeleteManyAsync(FilterDefinition<TDb> filter);
-        Task DeleteOneAsync(Expression<Func<TDb, bool>> expression);
-        Task DeleteOneAsync(FilterDefinition<TDb> filter);
-        Task<IEnumerable<TDb>> FindAsync(Expression<Func<TDb, bool>> expression, FindOptions<TDb> findOptions = null);
-        Task<IEnumerable<TDb>> FindAsync(FilterDefinition<TDb> filter, FindOptions<TDb> findOptions = null);
-        TDb FindById(string id);
-        Task<TDb> FindByIdAsync(string id);
-        Task<TDb> FindOneAndUpdateAsync(Expression<Func<TDb, bool>> expression, UpdateDefinition<TDb> update);
-        Task<TDb> FindOneAndUpdateAsync(FilterDefinition<TDb> filter, UpdateDefinition<TDb> update);
-        Task<IEnumerable<TDb>> FindPageAsync(Expression<Func<TDb, bool>> expression, FindOptions<TDb> findOptions);
-        Task<IEnumerable<TDb>> FindPageAsync(FilterDefinition<TDb> filter, FindOptions<TDb> findOptions);
-        Task InsertManyAsync(IEnumerable<TDb> entities);
-        void InsertOne(TDb entity);
-        Task<long> UpdateManyAsync(Expression<Func<TDb, bool>> expression, UpdateDefinition<TDb> update);
-        Task<long> UpdateManyAsync(FilterDefinition<TDb> filter, UpdateDefinition<TDb> update);
-        Task UpdateOneAsync(Expression<Func<TDb, bool>> expression, UpdateDefinition<TDb> update);
-        Task UpdateOneAsync(FilterDefinition<TDb> filter, UpdateDefinition<TDb> update);
+        IMongoCollection<TEntity> Col { get; }
+        IMongoQueryable<TEntity> Query { get; }
+        Task<long> CountDocumentsAsync(Expression<Func<TEntity, bool>> expression);
+        Task<long> CountDocumentsAsync(FilterDefinition<TEntity> filter);
+        Task<long> DeleteManyAsync(Expression<Func<TEntity, bool>> expression);
+        Task<long> DeleteManyAsync(FilterDefinition<TEntity> filter);
+        Task DeleteOneAsync(Expression<Func<TEntity, bool>> expression);
+        Task DeleteOneAsync(FilterDefinition<TEntity> filter);
+        Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> expression, FindOptions<TEntity> findOptions = null);
+        Task<IEnumerable<TEntity>> FindAsync(FilterDefinition<TEntity> filter, FindOptions<TEntity> findOptions = null);
+        TEntity FindById(string id);
+        Task<TEntity> FindByIdAsync(string id);
+        Task<TEntity> FindOneAndUpdateAsync(Expression<Func<TEntity, bool>> expression, UpdateDefinition<TEntity> update);
+        Task<TEntity> FindOneAndUpdateAsync(FilterDefinition<TEntity> filter, UpdateDefinition<TEntity> update);
+        Task<IEnumerable<TEntity>> FindPageAsync(Expression<Func<TEntity, bool>> expression, FindOptions<TEntity> findOptions);
+        Task<IEnumerable<TEntity>> FindPageAsync(FilterDefinition<TEntity> filter, FindOptions<TEntity> findOptions);
+        Task InsertManyAsync(IEnumerable<TEntity> entities);
+        void InsertOne(TEntity entity);
+        Task<long> UpdateManyAsync(Expression<Func<TEntity, bool>> expression, UpdateDefinition<TEntity> update);
+        Task<long> UpdateManyAsync(FilterDefinition<TEntity> filter, UpdateDefinition<TEntity> update);
+        Task UpdateOneAsync(Expression<Func<TEntity, bool>> expression, UpdateDefinition<TEntity> update);
+        Task UpdateOneAsync(FilterDefinition<TEntity> filter, UpdateDefinition<TEntity> update);
+        Task<TEntity> FindOneAndReplaceAsync(FilterDefinition<TEntity> filter, TEntity entity);
+        Task<TEntity> FindOneAndReplaceAsync(Expression<Func<TEntity, bool>> expression, TEntity entity);
     }
 }

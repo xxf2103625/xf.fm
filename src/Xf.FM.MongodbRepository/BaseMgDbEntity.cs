@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Xf.FM.MongodbRepository
 {
-    public abstract  class BaseDbEntity
+    public abstract  class BaseMgDbEntity
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
