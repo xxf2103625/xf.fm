@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.MongodbRepository", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{83C7C6BA-C375-4241-9FA8-2DAE9FE27104}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.MongodbRepositoryTest", "test\Xf.FM.MongodbRepositoryTest\Xf.FM.MongodbRepositoryTest.csproj", "{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.MongodbRepositoryTest", "test\Xf.FM.MongodbRepositoryTest\Xf.FM.MongodbRepositoryTest.csproj", "{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +31,17 @@ Global
 		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
+		{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD5149F4-5F39-4111-A456-BDDA972059E0}
