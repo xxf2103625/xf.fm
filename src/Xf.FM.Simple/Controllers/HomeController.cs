@@ -14,7 +14,10 @@ namespace Xf.FM.Simple.Controllers
         {
             return View();
         }
-
+        public IActionResult Tables()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

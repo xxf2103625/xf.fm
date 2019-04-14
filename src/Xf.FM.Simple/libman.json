@@ -7,11 +7,11 @@
       "destination": "wwwroot/lib/admin-lte/"
     },
     {
-      "library": "font-awesome@5.8.1",
+      "library": "font-awesome@4.7.0",
       "destination": "wwwroot/lib/font-awesome"
     },
     {
-      "library": "ionicons@4.5.5",
+      "library": "ionicons@2.0.0",
       "destination": "wwwroot/lib/ionicons"
     },
     {
@@ -21,6 +21,14 @@
     {
       "library": "fastclick@1.0.6",
       "destination": "wwwroot/lib/fastclick"
+    },
+    {
+      "library": "twitter-bootstrap@3.4.1",
+      "destination": "wwwroot/lib/bootstrap"
+    },
+    {
+      "library": "datatables@1.10.19",
+      "destination": "wwwroot/lib/datatables"
     }
   ]
 }

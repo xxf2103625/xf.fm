@@ -19,6 +19,7 @@ namespace Xf.FM.Simple
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://*:26574")
                 .UseStartup<Startup>();
     }
 }
