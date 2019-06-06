@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "_Admin";
+    ViewData["Title"] = "表格";
+}
+<table id="myTable" style="width:900px;"></table>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#myTable').dataTable({
+                serverSide: true,
+                ajax: "/home/tablesajax",
+                columns: [
+                    {
+                        name: 'id',
+                        data: 'id',
+                        title: "Id",
+                        sortable: false,
+                        searchable: false
+                    },
+                    {
+                        name: 'name',
+                        data: "name",
+                        title: "Name",
+                        sortable: false,
+                        searchable: false
+                    }
+                ]
+            });
+        });
+    </script>
+}

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="/lib/ionicons/css/ionicons.min.css">
+    <link href="~/lib/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
     <!-- Theme style -->
     <link href="~/lib/admin-lte/css/AdminLTE.css" rel="stylesheet" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -297,11 +298,14 @@ desired effect
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap.js"></script>
     <!-- AdminLTE App -->
     <script src="~/lib/admin-lte/js/adminlte.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. -->
     <script src="~/js/site.js"></script>
+    @RenderSection("Scripts",false)
 </body>
 </html>

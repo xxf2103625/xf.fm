@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemoTestService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Xf.FM.DataTables;
+using Xf.FM.DataTables.Impl;
 
 namespace Xf.FM.Simple
 {
@@ -30,8 +33,10 @@ namespace Xf.FM.Simple
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<DemoService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.RegisterDataTables();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

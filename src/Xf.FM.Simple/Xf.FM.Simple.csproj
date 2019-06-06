@@ -12,4 +12,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\test\DemoEntities\DemoEntities.csproj" />
+    <ProjectReference Include="..\test\DemoTestService\DemoTestService.csproj" />
+    <ProjectReference Include="..\Xf.FM.DataTables\Xf.FM.DataTables.csproj" />
+  </ItemGroup>
+
 </Project>

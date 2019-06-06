@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM", "Xf.FM\Xf.FM.csproj", "{3B6F6065-37DD-42FF-B344-968CF5EA10E4}"
 EndProject
@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.MvcTag", "Xf.FM.MvcTa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.Simple", "Xf.FM.Simple\Xf.FM.Simple.csproj", "{39A5BB32-C2BD-4C4E-8479-B2E1E11E1474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.DataTables", "Xf.FM.DataTables\Xf.FM.DataTables.csproj", "{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.DataTables", "Xf.FM.DataTables\Xf.FM.DataTables.csproj", "{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEntities", "test\DemoEntities\DemoEntities.csproj", "{C02BCEED-75C7-43CD-B7F5-0899F7E4F958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTestService", "test\DemoTestService\DemoTestService.csproj", "{8353067F-10E8-4DBF-8B2C-FE7B917F8BA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02BCEED-75C7-43CD-B7F5-0899F7E4F958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02BCEED-75C7-43CD-B7F5-0899F7E4F958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02BCEED-75C7-43CD-B7F5-0899F7E4F958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C02BCEED-75C7-43CD-B7F5-0899F7E4F958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8353067F-10E8-4DBF-8B2C-FE7B917F8BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8353067F-10E8-4DBF-8B2C-FE7B917F8BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8353067F-10E8-4DBF-8B2C-FE7B917F8BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8353067F-10E8-4DBF-8B2C-FE7B917F8BA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +72,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C921B96B-8479-400C-A0F5-9F0E56A3D7A3} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
 		{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
+		{C02BCEED-75C7-43CD-B7F5-0899F7E4F958} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
+		{8353067F-10E8-4DBF-8B2C-FE7B917F8BA0} = {83C7C6BA-C375-4241-9FA8-2DAE9FE27104}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD5149F4-5F39-4111-A456-BDDA972059E0}
