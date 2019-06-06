@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.MongodbRepositoryTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{4CADC59C-47C9-4D00-9055-A3B9C9EC89F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.MvcTag", "Xf.FM.MvcTag\Xf.FM.MvcTag.csproj", "{391CF2F6-28FB-443F-9BA0-30CB1086385A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.MvcTag", "Xf.FM.MvcTag\Xf.FM.MvcTag.csproj", "{391CF2F6-28FB-443F-9BA0-30CB1086385A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.Simple", "Xf.FM.Simple\Xf.FM.Simple.csproj", "{39A5BB32-C2BD-4C4E-8479-B2E1E11E1474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xf.FM.Simple", "Xf.FM.Simple\Xf.FM.Simple.csproj", "{39A5BB32-C2BD-4C4E-8479-B2E1E11E1474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xf.FM.DataTables", "Xf.FM.DataTables\Xf.FM.DataTables.csproj", "{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{39A5BB32-C2BD-4C4E-8479-B2E1E11E1474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39A5BB32-C2BD-4C4E-8479-B2E1E11E1474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39A5BB32-C2BD-4C4E-8479-B2E1E11E1474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60EEE92D-D4B6-4C9E-B4E6-84677F6B8312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

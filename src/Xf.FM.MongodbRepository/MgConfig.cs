@@ -33,11 +33,6 @@ namespace Xf.FM.MongodbRepository
                 {
                     Console.WriteLine("当前Client的State" + _client.Cluster.ClusterId + _client.Cluster.Description.State);
                 }
-                //if(_client.Cluster.Description.State== MongoDB.Driver.Core.Clusters.ClusterState.Disconnected)
-                //{
-                //    _client.StartSession();
-                //    Console.WriteLine("Start新的Session" + _client.Cluster.ClusterId + _client.Cluster.Description.State);
-                //}
                 return _client;
             }
         }
