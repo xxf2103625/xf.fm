@@ -7,21 +7,27 @@ namespace DemoTestService
 {
     public class DemoService
     {
+        public static IList<SampleEntity> _data;
         public IQueryable<SampleEntity> GetDemoData()
         {
-            IList<SampleEntity> data = new List<SampleEntity>();
-            var random = new Random();
-            for (int i = 0; i < 53; i++)
+            if (_data == null)
             {
-                var letter1 = random.Next(65, 91);
-                var letter2 = random.Next(65, 91);
-                var letter3 = random.Next(65, 91);
-                var letter4 = random.Next(65, 91);
+                IList<SampleEntity> data = new List<SampleEntity>();
+                var random = new Random();
+                for (int i = 0; i < 101; i++)
+                {
+                    var letter1 = random.Next(65, 91);
+                    var letter2 = random.Next(65, 91);
+                    var letter3 = random.Next(65, 91);
+                    var letter4 = random.Next(65, 91);
 
-                var sampleEntity = new SampleEntity(i + 1, new string(new[] { (char)letter1, (char)letter2, (char)letter3, (char)letter4 }));
-                data.Add(sampleEntity);
+                    var sampleEntity = new SampleEntity(i + 1, new string(new[] { (char)letter1, (char)letter2, (char)letter3, (char)letter4 }));
+                    data.Add(sampleEntity);
+                }
+                _data = data;
             }
-            return data.AsQueryable();
+            
+            return _data.AsQueryable();
         }
     }
 }

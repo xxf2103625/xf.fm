@@ -3,7 +3,27 @@
     <li class="header">查询编辑</li>
     <!-- Optionally, you can add icons to the links -->
     <li class="active"><a href="/"><i class="fa fa-dashboard"></i> <span>控制台</span></a></li>
-    <li><a href="/Home/Tables"><i class="fa fa-table"></i> <span>表格</span></a></li>
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-table"></i> <span>表格</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li>
+                <a href="/home/BaseTable">
+                    <i class="fa fa-circle-thin"></i><span>简易表格</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Home/Tables">
+                    <i class="fa fa-circle-thin"></i><span>ajax加载</span>
+                </a>
+            </li>
+        </ul>
+    </li>
     <li class="treeview">
         <a href="#">
             <i class="fa fa-edit"></i> <span>表单</span>

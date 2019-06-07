@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Admin";
+    ViewBag.Title = "BaseTable";
+}
+
+@model IQueryable<DemoEntities.SampleEntity>
+
+<div class="box">
+    <div class="box-header">
+        <h3>直接加载所有数据</h3>
+    </div>
+    <div class="box-body">
+        <div class="dataTables_wrapper form-inline dt-bootstrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="myTable" class="table table-bordered table-hover dataTable">
+                        <thead><tr><td>Id</td><td>姓名</td></tr></thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $("#myTable").dataTable();
+    </script>
+}

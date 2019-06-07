@@ -21,6 +21,11 @@ namespace Xf.FM.Simple.Controllers
         {
             return View();
         }
+        public IActionResult BaseTable()
+        {
+            IQueryable<DemoEntities.SampleEntity> data = _demoService.GetDemoData();
+            return View(data);
+        }
         public IActionResult Tables()
         {
             return View();
