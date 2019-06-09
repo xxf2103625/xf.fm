@@ -1,12 +1,10 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     Layout = "_Admin";
     ViewBag.Title = "BaseTable";
 }
 
-@model IQueryable<DemoEntities.SampleEntity>
+@model IEnumerable<DemoEntities.SampleEntity>
 
 <div class="box">
     <div class="box-header">
@@ -17,13 +15,22 @@
             <div class="row">
                 <div class="col-md-12">
                     <table id="myTable" class="table table-bordered table-hover dataTable">
-                        <thead><tr><td>Id</td><td>姓名</td></tr></thead>
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>名称</td>
+                                <td>标题</td>
+                                <td>状态</td>
+                            </tr>
+                        </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr>
                                     <td>@item.Id</td>
                                     <td>@item.Name</td>
+                                    <td>@item.Title</td>
+                                    <td>@item.State</td>
                                 </tr>
                             }
                         </tbody>

@@ -152,7 +152,7 @@ throw new Error('AdminLTE requires jQuery')
   var DataKey = 'lte.boxwidget';
 
   var Default = {
-    animationSpeed : 500,
+    animationSpeed : 100,
     collapseTrigger: '[data-widget="collapse"]',
     removeTrigger  : '[data-widget="remove"]',
     collapseIcon   : 'fa-minus',
@@ -1007,7 +1007,7 @@ throw new Error('AdminLTE requires jQuery')
   var DataKey = 'lte.tree';
 
   var Default = {
-    animationSpeed: 500,
+    animationSpeed: 100,
     accordion     : true,
     followLink    : false,
     trigger       : '.treeview a'

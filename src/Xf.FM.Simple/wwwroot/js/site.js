@@ -2,9 +2,18 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-//$(".sidebar-menu a[href='/home/tables']").click();
+var AdminLTEOptions = {
+    //Enable sidebar expand on hover effect for sidebar mini
+    //This option is forced to true if both the fixed layout and sidebar mini
+    //are used together
+    sidebarExpandOnHover: true,
+    //BoxRefresh Plugin
+    enableBoxRefresh: true,
+    //Bootstrap.js tooltip
+    enableBSToppltip: true,
+    animationSpeed: 100
+};
 
-// Disable search and ordering by default
 var dtCn = {
     "sProcessing": "处理中...",
     "sLengthMenu": "显示 _MENU_ 项结果",
@@ -29,6 +38,7 @@ var dtCn = {
         "sSortDescending": ": 以降序排列此列"
     }
 };
+//全局默认配置
 $.extend($.fn.dataTable.defaults, {
     language: dtCn,
     //searching: false,
